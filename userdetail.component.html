@@ -5,7 +5,7 @@
     <title>User Detail</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="js/userdetail.js"></script>
+    <script src="js/userdetail.component.js"></script>
     <script src="js/user.service.js"></script>
 </head>
 
@@ -17,27 +17,16 @@
     </div>
 
     <table>
-        <tr>
-            <td>Id:</td>
-            <td id ="pid"></td>
-        </tr>
-        <tr>
-            <td>User Name:</td>
-            <td id ="pusername"></td>
-        </tr>
-        <tr>
-            <td>Name:</td>
-            <td id ="pname"></td>
-        </tr>
-        <tr>
-            <td>isReviewer:</td>
-            <td id ="previewer"></td>
-        </tr>
-        <tr>
-            <td>isAdmin:</td>
-            <td id ="padmin"></td>
-        </tr>  
+
+        <tr><td>Id:</td><td id ="pid"></td></tr>
+        <tr><td>User Name:</td><td id ="pusername"></td></tr>
+        <tr><td>Name:</td><td id ="pname"></td></tr>
+        <tr><td>isReviewer:</td><td id ="previewer"></td></tr>
+        <tr><td>isAdmin:</td><td id ="padmin"></td></tr> 
+        <tr><td>Active:</td><td id ="pactive"></td></tr>  
+
     </table>
     <button>Display User</button>
+    
 </body>
 </html>

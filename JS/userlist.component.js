@@ -14,11 +14,15 @@ function refresh(users){
         tr += `<td>${user.lastname}</td>`
         tr += `<td>${user.isReviewer ? "Yes" : "No"}</td>`
         tr += `<td>${user.isAdmin ? "Yes" : "No"}</td>`
+        tr += `<td>${user.isActive ? "Yes" : "No"}</td>`
         tr +="</tr>";
         tbodyCtrl.innerHTML += tr;
     }
 }
 
 const getUsers = () => {
-    userlist();
+    //let jqXHR = UserService.list()
+    //jqXHR.done((res) => refresh(res));
+    UserService.list()
+    .done((res) => refresh(res))
 }
