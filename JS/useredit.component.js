@@ -1,15 +1,13 @@
-let urlparms = {};
-
-//$().ready(() => {
-   // $("#btnGet").click(() => {
-     //   let id = $("#xid").val();
-       // get(id);
-   // });
-//});
+//const baseUrl = "file:///C:/repos/PRSJS";
 
 $().ready(() => {
-    let urlparms = Utilities.parseUrlParameter(document.url);
-    $(".heading").css("fontWeight", "bold");
+    $("#btnGet").click(() => {
+            //let urlParms = Utilities.parseUrlParameter(document.URL);
+            //get(urlParms.id);
+        let id = $("#xid").val();
+            get(id);
+        }
+    );
 
     $("#btnSave").click(( )=>{
         let user = {
@@ -27,7 +25,8 @@ $().ready(() => {
         console.log("User:", user);
         UserService.update(user)
         .done((res)=>{
-            console.log("Update rc: ", res);
+            console.log("User:" , res);
+            //document.location.href = `${baseUrl}/userlist.component.html`;
         });
     });
 });

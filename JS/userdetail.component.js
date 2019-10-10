@@ -1,11 +1,11 @@
-let urlparms = {};
+//let urlparms = {};
 
 $().ready(() => {
-    let urlparms = Utilities.parseUrlParameter(document.url);
-    $(".heading").css("fontWeight", "bold");
-    //$("button").click(() => {
-      //  getUser();
-    //});
+    //let urlParms = Utilities.parseUrlParameter(document.url);
+    //$(".heading").css("fontWeight", "bold");
+    $("button").click(() => {
+        getUser();
+    });
 });
 
 const refresh = (user) => {
