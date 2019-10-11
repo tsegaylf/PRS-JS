@@ -14,11 +14,18 @@ function refresh(users){
         tr += `<td>${user.lastname}</td>`
         tr += `<td>${user.isReviewer ? "Yes" : "No"}</td>`
         tr += `<td>${user.isAdmin ? "Yes" : "No"}</td>`
-        tr += `<td>${user.isActive ? "Yes" : "No"}</td>`
+        tr += `<td> Detail | Update </td>`
         tr +="</tr>";
         tbodyCtrl.innerHTML += tr;
     }
+
 }
+
+//function Action (){
+  //  var b = document.getElementById('name').value
+    //document.getElementById('here').innerHTML = b;
+//}
+
 
 const getUsers = () => {
     //let jqXHR = UserService.list()

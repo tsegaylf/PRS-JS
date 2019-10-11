@@ -6,8 +6,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="js/userlist.component.js"></script>
+    <script src="js/user.utility.js"></script>
     <script src="js/user.service.js"></script>
 </head> 
+
+<form Action="file:///C:/repos/PRSJS/userdetail.component.html" method="GET">
+    <button type="text" id="Detail" name="userdetail.component">Details</button> 
+ </form>
+
+<form Action ="file:///C:/repos/PRSJS/useredit.component.html" method="GET"> 
+    <button type="text" id="Edit" name="useredit.component">Update</button> 
+</form>
 
 <body>
     <table class="table table-bordered" style="width: 100%;">
@@ -18,11 +27,12 @@
             <th scope="col">Lastname</th>
             <th scope="col">IsReviewer</th>
             <th scope="col">IsAdmin</th>
-            <th scope="col">IsActive</th>
+            <th scope="col">Action</th>
         </tr>    
     <tbody id="tbody"></tbody> 
     </table>
 
     <button onclick ="getUsers();"> Get Users </button>
+    
 </body>
 </html>

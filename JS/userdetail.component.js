@@ -1,11 +1,12 @@
-//let urlparms = {};
+let urlparms = {};
 
 $().ready(() => {
-    //let urlParms = Utilities.parseUrlParameter(document.url);
-    //$(".heading").css("fontWeight", "bold");
-    $("button").click(() => {
-        getUser();
-    });
+    let urlParms = Utilities.parseUrlParameter(document.url);
+    $(".heading").css("fontWeight", "bold");
+    getUser(urlParms.id)
+    //$("button").click(() => {
+    //    getUser();
+    //});
 });
 
 const refresh = (user) => {
@@ -14,7 +15,7 @@ const refresh = (user) => {
     $("#pname").text(user.firstname + " " + user.lastname);
     $("#previewer").text(user.isReviewer ? "Yes" : "No");
     $("#padmin").text(user.isAdmin ? "Yes" : "No");
-    $("#pactive").text(user.active ? "Yes" : "No");
+    $("#pactive").text(user.action ? "Yes" : "No");
 };
 
 const getUser = () => {

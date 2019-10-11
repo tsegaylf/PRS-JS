@@ -36,7 +36,7 @@ UserService.delete = (user) => {
     return $.ajax ({
         method: "DELETE",
         url: `${url}/${user.id}`,
-        data: JSON.stringify(id),
+        data: JSON.stringify(user),
         dataType: "json",
         crossOrigin: true,
         contentType: "application/json"

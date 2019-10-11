@@ -1,13 +1,12 @@
-//const baseUrl = "file:///C:/repos/PRSJS";
+const baseUrl = "file:///C:/repos/PRSJS";
 
 $().ready(() => {
     $("#btnGet").click(() => {
-            //let urlParms = Utilities.parseUrlParameter(document.URL);
-            //get(urlParms.id);
-        let id = $("#xid").val();
-            get(id);
-        }
-    );
+        let urlParms = Utilities.parseUrlParameter(document.URL);
+        get(urlParms.id);
+        //let id = $("#xid").val();
+        //    get(id);
+    });
 
     $("#btnSave").click(( )=>{
         let user = {
@@ -25,8 +24,8 @@ $().ready(() => {
         console.log("User:", user);
         UserService.update(user)
         .done((res)=>{
-            console.log("User:" , res);
-            //document.location.href = `${baseUrl}/userlist.component.html`;
+            //console.log("User:" , res);
+            document.location.href = `${baseUrl}/userlist.component.html`;
         });
     });
 });
