@@ -1,6 +1,7 @@
 $().ready(() => {
-    $("button").click(() => {
-        getUser();
+    $("#btnGet").click(() => {
+    let id = $("#xid").val();
+        get(id);
     });
 
     $("#btnDelete").click(( )=>{
@@ -16,7 +17,7 @@ $().ready(() => {
             isAdmin :$("#padmin").prop("checked"),
             active : $("#pactive").prop("checked"),
         }
-        console.log("User:", user);
+        console.log("User: ", user);
         UserService.delete(user)
         .done((res)=>{
             console.log("DELETE rc: ", res);
@@ -24,21 +25,19 @@ $().ready(() => {
     });
 });
 
-const refresh = (user) => {
-    $("#pid").text(user.id);
-    $("#pusername").text(user.username);
-    $("#ppassword").text(user.password);
-    $("#pname").text(user.firstname + " " + user.lastname);
-    $("#previewer").text(user.isReviewer ? "Yes" : "No");
-    $("#padmin").text(user.isAdmin ? "Yes" : "No");
-    $("#pactive").text(user.active ? "Yes" : "No");
-};
 
-const getUser = () => {
-    let id = $("#xid").val(); //get the id to display
+const get = (id) => {
     UserService.get(id)
-    .done( (res) => {
-        console.log("User:", res);
-        refresh(res);
+    .done((user)=> {
+        $("#pid").val(user.id);
+        $("#pusername").val(user.username);
+        $("#ppassword").val(user.password);
+        $("#pfirstname").val(user.firstname);
+        $("#plastname").val(user.lastname);
+        $("#pphone").val(user.phone);
+        $("#pemail").val(user.email);
+        $("#previewer").prop("checked", user.isReviewer);
+        $("#padmin").prop("checked", user.isAdmin);
+        $("#pactive").prop("checked", user.active);
     });
 };

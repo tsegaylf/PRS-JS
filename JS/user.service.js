@@ -32,11 +32,11 @@ UserService.update = (user) => {
     });
 }
 
-UserService.delete = (id) => {
+UserService.delete = (user) => {
     return $.ajax ({
         method: "DELETE",
         url: `${url}/${user.id}`,
-        data: JSON.stringify(user),
+        data: JSON.stringify(id),
         dataType: "json",
         crossOrigin: true,
         contentType: "application/json"
